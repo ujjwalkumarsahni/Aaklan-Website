@@ -1,96 +1,67 @@
-import React, { useState, useEffect } from "react";
-import { assets, buttonCard } from "../assets/assets.js";
-import ButtonCard from "./ButtonCard.jsx";
+import { motion } from "framer-motion";
+import { some } from "../assets/assets.js";
 
 const Hero = () => {
-  const textList = [
-    "A DeepTech-Driven",
-    "An Innovative",
-    "A Future-Ready",
-    "A Next-Gen",
-  ];
+    return (
+        <div className="relative w-full overflow-hidden bg-white">
 
-  const [index, setIndex] = useState(0);
-  const [typingText, setTypingText] = useState("");
+            {/* 🔥 Dot Cluster Top Left */}
+            <div className="dot-cluster absolute top-[-50px] left-[-50px]"></div>
 
-  // Fast typing animation
-  useEffect(() => {
-    const currentText = textList[index];
-    let char = 0;
+            {/* 🔥 Dot Cluster Top Right */}
+            <div className="dot-cluster dot-sm absolute top-[-65px] right-[-55px]"></div>
 
-    const speed = 50; // FAST TYPING SPEED
+            {/* 🔥 Dot Cluster Bottom Center */}
+            <div className="dot-cluster absolute bottom-[-50px] left-[-50px]"></div>
 
-    const typer = setInterval(() => {
-      setTypingText(currentText.substring(0, char));
-      char++;
+            <div className="dot-cluster absolute bottom-[-50px] right-[-50px]"></div>
 
-      if (char > currentText.length) {
-        clearInterval(typer);
-        setTimeout(() => {
-          setIndex((prev) => (prev + 1) % textList.length);
-        }, 1000);
-      }
-    }, speed);
+            {/* Subtle Bottom Gradient */}
+            <div
+                className="absolute bottom-0 left-0 w-full h-[40%] opacity-40 pointer-events-none bg-gradient-to-r from-orange-600 to-white"
+                style={{
+                    clipPath: "polygon(0 20%, 100% 0%, 100% 100%, 0% 100%)",
+                }}
+            ></div>
 
-    return () => clearInterval(typer);
-  }, [index]);
+            {/* Main Content */}
+            <div className="relative px-4 sm:px-8 md:px-16 lg:px-20 py-14 flex flex-col md:flex-row items-center justify-between gap-10">
 
-  return (
-    <section
-      className="w-full relative pt-10 lg:pt-20 pb-20 overflow-hidden bg-cover bg-center"
-      style={{
-        backgroundImage: `url(${assets.banner})`,
-      }}
-    >
-      {/* HERO GRID */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center px-6 gap-12">
+                {/* Text */}
+                <motion.div
+                    initial={{ x: -30, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center md:text-left max-w-lg md:max-w-3xl z-10"
+                >
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-gray-900">
+                        A DeepTech-Driven EdTech Ecosystem <br />
+                        for{" "}
+                        <span className="text-orange-500 relative inline-block">
+                            Viksit Bharat
+                            <span
+                                className="absolute left-0 -bottom-1 h-[4px] w-full bg-orange-500 rounded-full"
+                                style={{ transform: "rotate(-3deg)", transformOrigin: "left bottom" }}
+                            ></span>
+                        </span>
+                    </h1>
 
-        {/* LEFT CONTENT */}
-        <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-[#0B234A] leading-snug">
-            <span className="text-white">{typingText}</span>
-<span className="text-white animate-pulse">|</span>
-            <br />
-            EdTech Ecosystem for Viksit Bharat
-          </h1>
-        </div>
+                    {/* Buttons */}
+                    <div className="flex gap-4 justify-center md:justify-start mt-6">
+                        <motion.button whileHover={{ scale: 1.05 }} className="px-8 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full shadow-lg font-semibold">Get Started</motion.button>
+                        <motion.button whileHover={{ scale: 1.05 }} className="px-8 py-3 border border-orange-500 text-orange-500 rounded-full font-semibold hover:bg-orange-500 hover:text-white transition">Read More</motion.button>
+                    </div>
+                </motion.div>
 
-        {/* RIGHT IMAGE */}
-        <div className="relative w-full flex justify-center">
-          <div className="absolute inset-0 flex justify-center items-center">
-            <div className="w-[380px] md:w-[480px] h-[380px] md:h-[480px] 
-              rounded-full blur-3xl bg-orange-300 opacity-30 animate-pulse">
+                {/* Image */}
+                <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.7 }} className="relative z-10">
+                    <img src={some.circleBanner} alt="Hero Visual" className="w-[260px] sm:w-[340px] md:w-[420px] lg:w-[460px] drop-shadow-xl mx-auto" />
+                </motion.div>
+
             </div>
-          </div>
-
-          <img
-            src={assets.heroBanner}
-            alt="Kids Robotics"
-            className="relative w-[330px] md:w-[420px] rounded-full object-cover animate-float"
-          />
         </div>
-      </div>
-
-      {/* BOTTOM CARDS */}
-      <div className="max-w-5xl mx-auto mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6">
-        <div className="transition transform hover:-translate-y-2 hover:shadow-xl hover:scale-[1.03] duration-300">
-          <ButtonCard image={buttonCard.coding} text={"Coding"} />
-        </div>
-
-        <div className="transition transform hover:-translate-y-2 hover:shadow-xl hover:scale-[1.03] duration-300">
-          <ButtonCard image={buttonCard.robot} text={"Robotics & AI"} />
-        </div>
-
-        <div className="transition transform hover:-translate-y-2 hover:shadow-xl hover:scale-[1.03] duration-300">
-          <ButtonCard image={buttonCard.virtual} text={"VR / AR"} />
-        </div>
-
-        <div className="transition transform hover:-translate-y-2 hover:shadow-xl hover:scale-[1.03] duration-300">
-          <ButtonCard image={buttonCard.entrepreneurship} text={"Entrepreneurship"} />
-        </div>
-      </div>
-    </section>
-  );
+    );
 };
 
 export default Hero;
+

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { assets } from "../assets/assets.js";
 import Login from "../pages/Login.jsx";
-
+import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);     // For Login Modal
   const [mobileOpen, setMobileOpen] = useState(false); // For Mobile Navbar
@@ -10,40 +10,60 @@ export default function Header() {
   return (
     <header className="w-full sticky top-0 z-50">
       <div className="bg-[#0b234a] text-white text-sm">
-        <div className="max-w-8xl mx-auto flex flex-wrap justify-between gap-4 py-2 px-4">
+        <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-6 py-3 px-6 bg-[#0b234a] text-white shadow-md">
 
-          <div className="flex items-center gap-2">
-            <span className="font-bold">📖 ADDRESS</span>
-            <span>Jaipur - 302026</span>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <span className="font-bold">📧 EMAIL</span>
-            <span>info@aaklan.com</span>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <span className="font-bold">📞 CONTACT</span>
-            <span>+91 - 9571677609</span>
-          </div>
-
-          <div>
-            <button
-              onClick={() => setIsOpen(true)}
-              className="hidden lg:block text-xl px-4 py-2 rounded-full font-medium 
-             bg-linear-to-r from-yellow-400 to-orange-500 
-             text-[#0b234a] shadow-lg hover:scale-105 transition-all"
-            >
-              Get Started
-            </button>
-            <Login isOpen={isOpen} setIsOpen={setIsOpen} />
-          </div>
-
+      {/* Address */}
+      <div className="flex items-center gap-3">
+        <FaMapMarkerAlt className="text-yellow-400 text-xl" />
+        <div>
+          <span className="font-semibold">Address:</span>{" "}
+          <span>Jaipur - 302026</span>
         </div>
       </div>
 
+      {/* Email */}
+      <div className="flex items-center gap-3">
+        <FaEnvelope className="text-yellow-400 text-xl" />
+        <div>
+          <span className="font-semibold">Email:</span>{" "}
+          <span>info@aaklan.com</span>
+        </div>
+      </div>
+
+      {/* Phone */}
+      <div className="flex items-center gap-3">
+        <FaPhoneAlt className="text-yellow-400 text-xl" />
+        <div>
+          <span className="font-semibold">Contact:</span>{" "}
+          <span>+91 - 9571677609</span>
+        </div>
+      </div>
+
+      {/* Login / Signup */}
+      <div className="hidden lg:flex gap-3">
+        <button
+          onClick={() => setIsOpen("login")}
+          className="text-lg px-5 py-2 rounded-full border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-[#0b234a] transition-all"
+        >
+          Login
+        </button>
+
+        <button
+          onClick={() => setIsOpen("signup")}
+          className="text-lg px-6 py-2 rounded-full font-medium 
+          bg-linear-to-r from-yellow-400 to-orange-500 
+          text-[#0b234a] shadow-xl hover:scale-110 hover:shadow-2xl transition-all"
+        >
+          Signup
+        </button>
+
+        <Login isOpen={isOpen} setIsOpen={setIsOpen} />
+      </div>
+    </div>
+      </div>
+
       {/* NAVBAR */}
-      <nav className="bg-linear-to-r from-orange-500 to-[#0b234a] shadow-lg">
+      <nav className="bg-linear-to-r from-white to-orange-700 shadow-lg">
         <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
 
           <img

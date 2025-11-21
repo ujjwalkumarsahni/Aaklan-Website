@@ -52,6 +52,12 @@ import ton from './ton.png'
 import MHS from './MHS.jpg'
 import gps from './gps.png'
 import banner from './banner.png'
+
+import circleBanner from './circle.png'
+import leftDot from './left-top.png'
+import rightDot from './right-dot.png'
+import gradientleft from './gradient-left.png'
+// import gradientright from './gradient-right.png'
 export const assets = {
     logo,
     heroBanner,
@@ -101,7 +107,12 @@ export const some = {
     roboticsLab,
     PictoBlox3,
     Aaklanbooks,
-    stafftraining
+    stafftraining,
+    circleBanner,
+    leftDot,
+    rightDot,
+    gradientleft,
+
 }
 
 export const footer = {

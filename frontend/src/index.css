@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+.hero-bg {
+  background-image: radial-gradient(circle, #ccc 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
 
 @keyframes slide {
   0%   { transform: translateX(0); }
@@ -41,3 +46,22 @@
   background-size: 200% 200%;
   animation: gradientMove 8s ease infinite;
 }
+
+.dot-cluster {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background-image: radial-gradient(#FF6900 2px, transparent 2px);
+  background-size: 14px 14px;
+  opacity: 0.2;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.dot-sm {
+  width: 200px;
+  height: 200px;
+  background-size: 10px 10px;
+}
+
+
