@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+
+@keyframes slide {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.slider-track {
+  animation: slide 20s linear infinite;
+}
+
+
+@keyframes slideX {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.curriculum-slider {
+  animation: slideX 35s linear infinite;
+}
+
+
+/* Floating Effect */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Background Gradient Animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradientMove {
+  background-size: 200% 200%;
+  animation: gradientMove 8s ease infinite;
+}
