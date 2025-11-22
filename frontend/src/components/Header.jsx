@@ -1,24 +1,35 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import { assets } from "../assets/assets.js";
 import Login from "../pages/Login.jsx";
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
-export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);     // For Login Modal
-  const [mobileOpen, setMobileOpen] = useState(false); // For Mobile Navbar
 
+export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [lastScroll, setLastScroll] = useState(0);
+  const location = useLocation();
+
+  const menuItems = [
+    { name: "Home", path: "/" },
+    { name: "Coding", path: "/coding" },
+    { name: "Robotics & AI", path: "/robotics-ai" },
+    { name: "VR/AR Lab", path: "/vr-ar-lab" },
+    { name: "Workshop", path: "/workshop" },
+    { name: "Books", path: "/books" },
+    { name: "Online Courses", path: "/online-courses" },
+    { name: "Pre Primary School", path: "/pre-primary-school" }
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScroll = window.scrollY;
 
       if (currentScroll > lastScroll && currentScroll > 10) {
-        // scrolling down → hide
         setIsHidden(true);
       } else {
-        // scrolling up → show
         setIsHidden(false);
       }
 
@@ -29,17 +40,19 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScroll]);
 
-
+  const isActivePath = (path) => {
+    return location.pathname === path;
+  };
 
   return (
     <header className="w-full sticky top-0 z-50">
+      {/* Top Bar */}
       <div
-        className={`bg-[#0b234a] text-white text-sm transition-all duration-700 ease-in-out overflow-hidden ${isHidden ? "opacity-0 h-0" : "opacity-100 h-[60px]"
-          }`}
+        className={`bg-[#0b234a] text-white text-sm transition-all duration-700 ease-in-out overflow-hidden ${
+          isHidden ? "opacity-0 h-0" : "opacity-100 h-[60px]"
+        }`}
       >
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-6 py-2 px-6 text-white">
-
-
           {/* Address */}
           <div className="flex items-center gap-3">
             <FaMapMarkerAlt className="text-yellow-400 text-xl" />
@@ -79,7 +92,7 @@ export default function Header() {
             <button
               onClick={() => setIsOpen("signup")}
               className="text-lg px-6 py-2 rounded-full font-medium 
-          bg-linear-to-r from-yellow-400 to-orange-500 
+          bg-gradient-to-r from-yellow-400 to-orange-500 
           text-[#0b234a] shadow-xl hover:scale-110 hover:shadow-2xl transition-all"
             >
               Signup
@@ -93,73 +106,97 @@ export default function Header() {
       {/* NAVBAR */}
       <nav className="bg-white shadow-lg">
         <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
+          {/* Logo */}
+          <Link to="/">
+            <img
+              src={assets.logo}
+              className="h-12 filter drop-shadow-md cursor-pointer"
+              alt="logo"
+            />
+          </Link>
 
-          <img
-            src={assets.logo}
-            className="h-12 filter drop-shadow-md"
-            alt="logo"
-          />
-
-          {/* Desktop Menu */}
+          {/* Desktop Menu with Links */}
           <ul className="hidden lg:flex gap-8 font-medium">
-            {[
-              "Home",
-              "Coding",
-              "Robotics & AI",
-              "VR/AR Lab",
-              "Workshop",
-              "Books",
-              "Online Courses",
-              "Pre Primary School"
-            ].map((item) => (
-              <li key={item} className="relative cursor-pointer group">
-                {item}
-                <span className="absolute left-0 -bottom-1 w-0 h-[3px] bg-yellow-400 group-hover:w-full transition-all"></span>
+            {menuItems.map((item) => (
+              <li key={item.name} className="relative group">
+                <Link
+                  to={item.path}
+                  className={`transition-colors duration-300 ${
+                    isActivePath(item.path)
+                      ? "text-yellow-500 font-semibold"
+                      : "text-gray-700 hover:text-yellow-500"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+                <span
+                  className={`absolute left-0 -bottom-1 h-[3px] bg-yellow-400 transition-all duration-300 ${
+                    isActivePath(item.path) ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                ></span>
               </li>
             ))}
           </ul>
 
           {/* Mobile Menu Button */}
           <button
-            className="text-white lg:hidden"
+            className="text-gray-700 lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
-            {mobileOpen ? <X size={32} /> : <Menu size={32} />}
+            {mobileOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu with Links */}
         {mobileOpen && (
-          <ul className="lg:hidden bg-[#0b234a] text-white p-4 space-y-4">
-            {[
-              "Home",
-              "Coding",
-              "Robotics & AI",
-              "VR/AR Lab",
-              "Workshop",
-              "Books",
-              "Online Courses",
-              "Pre Primary School"
-            ].map((item) => (
-              <li key={item} className="cursor-pointer">
-                {item}
-              </li>
-            ))}
-            <div>
-              <button
-                onClick={() => setIsOpen(true)}
-                className="hidden md:block text-xl px-6 py-3 rounded-full font-medium 
-             bg-linear-to-r from-yellow-400 to-orange-500 
-             text-[#0b234a] shadow-lg hover:scale-105 transition-all"
-              >
-                Get Started
-              </button>
-              <Login isOpen={isOpen} setIsOpen={setIsOpen} />
-            </div>
-          </ul>
+          <div className="lg:hidden bg-white border-t border-gray-200 shadow-xl">
+            <ul className="p-4 space-y-2">
+              {menuItems.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    to={item.path}
+                    onClick={() => setMobileOpen(false)}
+                    className={`block px-4 py-3 rounded-lg transition-all duration-200 ${
+                      isActivePath(item.path)
+                        ? "bg-yellow-50 text-yellow-600 font-semibold border-l-4 border-yellow-500"
+                        : "text-gray-700 hover:bg-gray-50 hover:text-yellow-500"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+              
+              {/* Mobile Auth Buttons */}
+              <div className="flex flex-col gap-3 mt-6 px-4 pt-4 border-t">
+                <button
+                  onClick={() => {
+                    setIsOpen("login");
+                    setMobileOpen(false);
+                  }}
+                  className="w-full px-6 py-3 rounded-full border-2 border-yellow-400 text-yellow-500 font-semibold hover:bg-yellow-400 hover:text-[#0b234a] transition-all"
+                >
+                  Login
+                </button>
+
+                <button
+                  onClick={() => {
+                    setIsOpen("signup");
+                    setMobileOpen(false);
+                  }}
+                  className="w-full px-6 py-3 rounded-full font-medium 
+                  bg-gradient-to-r from-yellow-400 to-orange-500 
+                  text-[#0b234a] shadow-lg hover:scale-105 transition-all"
+                >
+                  Signup
+                </button>
+              </div>
+            </ul>
+          </div>
         )}
       </nav>
 
+      <Login isOpen={isOpen} setIsOpen={setIsOpen} />
     </header>
   );
 }

@@ -215,9 +215,9 @@ export default function Footer() {
         </div> */}
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/20 pt-6">
+        <div className="border-t border-white/20 pt-1">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-white/70 text-sm mb-4 md:mb-0">
+            <div className="text-white/70 text-sm mb-6 md:mb-0">
               © {new Date().getFullYear()} All rights reserved | Aaklan IT Solutions Pvt. Ltd.
             </div>
             <div className="flex space-x-6 text-sm">
