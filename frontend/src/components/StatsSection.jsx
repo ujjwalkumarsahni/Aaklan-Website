@@ -108,7 +108,7 @@ const StatsSection = () => {
           {/* LEFT COLUMN - Stats */}
           <div className="p-8 lg:p-12 bg-gradient-to-br from-blue-50 to-indigo-50">
             <div className="mb-10">
-              <h2 className="text-2xl lg:text-3xl font-bold text-[#0B234A] mb-4">
+              <h2 className="text-2xl lg:text-3xl font-bold text-[#0b234a] mb-4">
                 Transforming Education Through Technology
               </h2>
               <p className="text-gray-600 text-lg">
@@ -153,7 +153,7 @@ const StatsSection = () => {
                     <div className="absolute -inset-2 bg-blue-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                   </div>
                   <div>
-                    <p className="text-3xl font-bold text-[#0B234A] mb-1">
+                    <p className="text-3xl font-bold text-[#0b234a] mb-1">
                       {formatNumber(counters.students)}+
                     </p>
                     <p className="text-gray-600 text-sm font-medium">Students Trained</p>
@@ -175,7 +175,7 @@ const StatsSection = () => {
                     <div className="absolute -inset-2 bg-green-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                   </div>
                   <div>
-                    <p className="text-3xl font-bold text-[#0B234A] mb-1">
+                    <p className="text-3xl font-bold text-[#0b234a] mb-1">
                       {counters.retention}%
                     </p>
                     <p className="text-gray-600 text-sm font-medium">School Retention</p>
@@ -197,7 +197,7 @@ const StatsSection = () => {
                     <div className="absolute -inset-2 bg-purple-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                   </div>
                   <div>
-                    <p className="text-3xl font-bold text-[#0B234A] mb-1">
+                    <p className="text-3xl font-bold text-[#0b234a] mb-1">
                       {counters.trainers}+
                     </p>
                     <p className="text-gray-600 text-sm font-medium">Trained Trainers</p>
@@ -224,7 +224,7 @@ const StatsSection = () => {
                 </div>
                 
                 <div className="text-sm text-gray-600">
-                  Trusted by <span className="font-bold text-[#0B234A]">95+</span> educational institutions nationwide
+                  Trusted by <span className="font-bold text-[#0b234a]">95+</span> educational institutions nationwide
                 </div>
               </div>
             </div>
@@ -248,7 +248,7 @@ const StatsSection = () => {
               </div>
               
               <div className="max-w-md mx-auto">
-                <h3 className="text-2xl font-bold text-[#0B234A] mb-4">
+                <h3 className="text-2xl font-bold text-[#0b234a] mb-4">
                   Recognized Excellence in EdTech
                 </h3>
                 <p className="text-gray-600 mb-6">
@@ -289,7 +289,7 @@ const StatsSection = () => {
         </div>
 
         {/* BOTTOM GRADIENT */}
-        <div className="h-2 bg-gradient-to-r from-blue-400 via-purple-500 to-orange-500 relative overflow-hidden">
+        <div className="h-2 bg-gradient-to-r from-[#E22213] via-[#0b234a] to-orange-500 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
         </div>
       </div>

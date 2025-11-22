@@ -49,25 +49,25 @@ const OurBelivers = () => {
           <img 
             src={assets.chhatrpati} 
             alt="Believer Logo"
-            className="w-32 mx-auto opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
+            className="w-25 mx-auto opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
           />
 
           <img 
             src={assets.ton} 
             alt="Believer Logo"
-            className="w-32 mx-auto opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
+            className="w-25 mx-auto opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
           />
 
           <img 
             src={assets.MHS} 
             alt="Believer Logo"
-            className="w-32 mx-auto opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
+            className="w-25 mx-auto opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
           />
 
           <img 
             src={assets.gps} 
             alt="Believer Logo"
-            className="w-32 mx-auto opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
+            className="w-25 mx-auto opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
           />
 
         </div>

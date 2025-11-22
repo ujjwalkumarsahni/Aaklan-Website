@@ -12,7 +12,7 @@ export default function RoboticsKit() {
   return (
     <section className="relative py-20 px-4 overflow-hidden">
       {/* Clip-path Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-indigo-50 z-0"
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0b234a]/10 via-white to-[#E22213]/10 z-0"
            style={{
              clipPath: 'polygon(0 0, 100% 0, 100% 85%, 0 100%)'
            }}>
@@ -27,7 +27,7 @@ export default function RoboticsKit() {
         >
           <path 
             d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
-            className="fill-[#082046] "
+            className="fill-[#0b234a]"
           ></path>
         </svg>
       </div>
@@ -42,15 +42,9 @@ export default function RoboticsKit() {
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Centered Heading */}
         <div className="text-center mb-16 md:mb-20">
-          <motion.h2 
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-bold text-gray-800 mb-4"
-          >
-            Why Choose Our Robotics Program?
-          </motion.h2>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0b234a] mb-6 leading-tight">
+            Why Choose Our{' '} <span className="bg-gradient-to-r from-[#E22213] via-orange-500 to-[#0b234a] bg-clip-text text-transparent">Robotics Program?</span>
+          </h2>
           <motion.p
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +65,7 @@ export default function RoboticsKit() {
                 index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'
               }`}
             >
-              <FeatureCard {...feature} />
+              <FeatureCard {...feature} index={index} />
             </div>
           ))}
 
@@ -107,21 +101,50 @@ const FloatingRobot = () => (
 );
 
 /* -------- Single Feature Card -------- */
-const FeatureCard = ({ title, desc, image }) => {
+const FeatureCard = ({ title, desc, image, index }) => {
+  const colorVariants = [
+    {
+      hoverBg: "hover:bg-[#0b234a]/5",
+      hoverText: "group-hover:text-[#0b234a]",
+      hoverBorder: "group-hover:border-[#0b234a]",
+      glow: "group-hover:shadow-[0_0_20px_rgba(11,35,74,0.3)]"
+    },
+    {
+      hoverBg: "hover:bg-orange-500/5",
+      hoverText: "group-hover:text-orange-500",
+      hoverBorder: "group-hover:border-orange-500",
+      glow: "group-hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
+    },
+    {
+      hoverBg: "hover:bg-[#E22213]/5",
+      hoverText: "group-hover:text-[#E22213]",
+      hoverBorder: "group-hover:border-[#E22213]",
+      glow: "group-hover:shadow-[0_0_20px_rgba(226,34,19,0.3)]"
+    },
+    {
+      hoverBg: "hover:bg-gradient-to-br hover:from-[#0b234a]/5 hover:to-[#E22213]/5",
+      hoverText: "group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-[#0b234a] group-hover:to-[#E22213] group-hover:bg-clip-text",
+      hoverBorder: "group-hover:border-transparent group-hover:bg-gradient-to-r group-hover:from-[#0b234a] group-hover:to-[#E22213]",
+      glow: "group-hover:shadow-[0_0_20px_rgba(11,35,74,0.2)]"
+    }
+  ];
+
+  const colors = colorVariants[index % colorVariants.length];
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.9, y: 20 }}
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
-      whileHover={{ scale: 1.05, backgroundColor: "#f0f9ff" }}
+      whileHover={{ scale: 1.05 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5 }}
-      className="group relative bg-white p-4 sm:p-6 hover:z-20 rounded-2xl shadow-lg hover:shadow-2xl transition-all w-full max-w-sm sm:max-w-md lg:max-w-lg border border-gray-100"
+      className={`group relative bg-white p-4 sm:p-6 hover:z-20 rounded-2xl shadow-lg hover:shadow-2xl transition-all w-full max-w-sm sm:max-w-md lg:max-w-lg border border-gray-100 ${colors.hoverBg}`}
     >
       {/* Glow Border on hover */}
-      <div className="absolute inset-0 border-2 border-transparent group-hover:border-blue-400 rounded-2xl transition-all duration-500 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"></div>
+      <div className={`absolute inset-0 border-2 border-transparent rounded-2xl transition-all duration-500 ${colors.hoverBorder} ${colors.glow}`}></div>
 
       <div className="relative space-y-4 text-center">
-        <h3 className="text-xl sm:text-2xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">
+        <h3 className={`text-xl sm:text-2xl font-bold text-gray-800 transition-colors ${colors.hoverText}`}>
           {title.map((t, i) => (
             <span key={i} className="block leading-tight">{t}</span>
           ))}

@@ -66,30 +66,28 @@ const DedicatedStaffing = () => {
   ];
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="relative min-h-screen bg-gradient-to-br from-[#0b234a]/10 to-[#E22213]/10 py-12 px-4 sm:px-6 lg:px-8">
       <div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180">
-        <svg 
-          className="relative block w-full h-20" 
-          data-name="Layer 1" 
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 1200 120" 
+        <svg
+          className="relative block w-full h-20"
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
           preserveAspectRatio="none"
         >
-          <path 
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
-            className="fill-[#082046]"
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            className="fill-[#0b234a]"
           ></path>
         </svg>
       </div>
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Empowering Success with{' '}
-            <span className="bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
-              Dedicated Staffing Solutions
-            </span>
-          </h1>
+
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0b234a] mb-6 leading-tight">
+            Empowering Success with{' '} <span className="bg-gradient-to-r from-[#E22213] via-orange-500 to-[#0b234a] bg-clip-text text-transparent">Dedicated Staffing Solutions</span>
+          </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             We take full responsibility of impeccable class delivery and student impact.
           </p>
@@ -98,21 +96,21 @@ const DedicatedStaffing = () => {
         {/* Process Steps */}
         <div className="relative">
           {/* Vertical line for timeline */}
-          <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-blue-400 to-green-400 hidden md:block"></div>
-          
+          <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-[#0b234a] to-[#E22213] hidden md:block"></div>
+
           <div className="space-y-8 md:space-y-12">
             {steps.map((step, index) => (
-              <div 
-                key={step.id} 
+              <div
+                key={step.id}
                 className="flex flex-col md:flex-row items-start md:items-center relative"
               >
                 {/* Left Side Content (for even steps) */}
                 <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'} mb-4 md:mb-0 order-2 md:order-1`}>
                   {index % 2 === 0 && (
-                    <div className="bg-white rounded-xl shadow-lg p-4 md:p-6 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200">
+                    <div className="bg-white rounded-xl shadow-lg p-4 md:p-6 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#0b234a]/30">
                       <div className={`flex md:flex-row-reverse items-start space-x-4 md:space-x-reverse md:space-x-4`}>
                         <div className="shrink-0">
-                          <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-blue-500 to-green-400 rounded-full flex items-center justify-center text-white">
+                          <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-[#0b234a] to-[#E22213] rounded-full flex items-center justify-center text-white">
                             {step.icon}
                           </div>
                         </div>
@@ -131,18 +129,18 @@ const DedicatedStaffing = () => {
 
                 {/* Center Timeline */}
                 <div className="flex items-center justify-center md:absolute md:left-1/2 md:transform md:-translate-x-1/2 order-1 md:order-2 z-10 mb-4 md:mb-0">
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full shadow-lg flex items-center justify-center border-4 border-blue-500 hover:scale-110 transition-transform duration-300">
-                    <span className="text-lg md:text-xl font-bold text-blue-600">{step.id}</span>
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full shadow-lg flex items-center justify-center border-4 border-[#0b234a] hover:scale-110 transition-transform duration-300">
+                    <span className="text-lg md:text-xl font-bold text-[#0b234a]">{step.id}</span>
                   </div>
                 </div>
 
                 {/* Right Side Content (for odd steps) */}
                 <div className={`md:w-1/2 ${index % 2 !== 0 ? 'md:pl-12' : 'md:pr-12'} order-3`}>
                   {index % 2 !== 0 && (
-                    <div className="bg-white rounded-xl shadow-lg p-4 md:p-6 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-green-200">
+                    <div className="bg-white rounded-xl shadow-lg p-4 md:p-6 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-orange-500/30">
                       <div className="flex items-start space-x-4">
                         <div className="shrink-0">
-                          <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-blue-500 to-green-400 rounded-full flex items-center justify-center text-white">
+                          <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-orange-500 to-[#E22213] rounded-full flex items-center justify-center text-white">
                             {step.icon}
                           </div>
                         </div>
@@ -161,7 +159,7 @@ const DedicatedStaffing = () => {
 
                 {/* Mobile connector */}
                 {index < steps.length - 1 && (
-                  <div className="absolute top-12 md:top-16 left-6 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-8 md:h-12 bg-gradient-to-b from-blue-400 to-green-400 md:hidden"></div>
+                  <div className="absolute top-12 md:top-16 left-6 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-8 md:h-12 bg-gradient-to-b from-[#0b234a] to-[#E22213] md:hidden"></div>
                 )}
               </div>
             ))}
@@ -170,7 +168,7 @@ const DedicatedStaffing = () => {
 
         {/* CTA Section */}
         <div className="text-center mt-16">
-          <button className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-lg">
+          <button className="bg-gradient-to-r from-[#0b234a] to-[#E22213] hover:from-[#0b234a]/90 hover:to-[#E22213]/90 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-lg">
             Get Started Today
           </button>
           <p className="text-gray-500 mt-4 text-sm">

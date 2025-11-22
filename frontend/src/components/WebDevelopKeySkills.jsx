@@ -8,72 +8,72 @@ const skills = [
     percent: 90, 
     icon: key.oneOne,
     description: "Develop systematic approach to problem-solving",
-    color: "from-blue-500 to-cyan-400",
-    bgColor: "from-blue-50 to-cyan-50",
-    borderColor: "border-blue-200"
+    color: "from-[#0b234a] to-[#0b234a]/80",
+    bgColor: "from-[#0b234a]/5 to-[#0b234a]/10",
+    borderColor: "border-[#0b234a]/20"
   },
   { 
     title: "Confidence Level", 
     percent: 85, 
     icon: key.twoTwo,
     description: "Build self-assurance through project completion",
-    color: "from-green-500 to-emerald-400",
-    bgColor: "from-green-50 to-emerald-50",
-    borderColor: "border-green-200"
+    color: "from-orange-500 to-orange-400",
+    bgColor: "from-orange-500/5 to-orange-500/10",
+    borderColor: "border-orange-500/20"
   },
   { 
     title: "Perseverance", 
     percent: 89, 
     icon: key.threeThree,
     description: "Learn to overcome challenges and persist",
-    color: "from-purple-500 to-pink-400",
-    bgColor: "from-purple-50 to-pink-50",
-    borderColor: "border-purple-200"
+    color: "from-[#E22213] to-[#E22213]/80",
+    bgColor: "from-[#E22213]/5 to-[#E22213]/10",
+    borderColor: "border-[#E22213]/20"
   },
   { 
     title: "Creativity", 
     percent: 86, 
     icon: key.fourFour,
     description: "Unlock innovative thinking and imagination",
-    color: "from-orange-500 to-red-400",
-    bgColor: "from-orange-50 to-red-50",
-    borderColor: "border-orange-200"
+    color: "from-[#0b234a] to-[#E22213]",
+    bgColor: "from-[#0b234a]/5 to-[#E22213]/5",
+    borderColor: "border-[#0b234a]/20"
   },
   { 
     title: "Critical Thinking", 
     percent: 90, 
     icon: key.fiveFive,
     description: "Analyze and evaluate information effectively",
-    color: "from-indigo-500 to-blue-400",
-    bgColor: "from-indigo-50 to-blue-50",
-    borderColor: "border-indigo-200"
+    color: "from-orange-500 to-[#E22213]",
+    bgColor: "from-orange-500/5 to-[#E22213]/5",
+    borderColor: "border-orange-500/20"
   },
   { 
     title: "Communication", 
     percent: 85, 
     icon: key.sixSix,
     description: "Express ideas clearly and collaborate effectively",
-    color: "from-teal-500 to-green-400",
-    bgColor: "from-teal-50 to-green-50",
-    borderColor: "border-teal-200"
+    color: "from-[#0b234a] to-orange-500",
+    bgColor: "from-[#0b234a]/5 to-orange-500/5",
+    borderColor: "border-[#0b234a]/20"
   },
   { 
     title: "Problem Solving", 
     percent: 89, 
     icon: key.sevenSeven,
     description: "Develop solutions for complex challenges",
-    color: "from-amber-500 to-yellow-400",
-    bgColor: "from-amber-50 to-yellow-50",
-    borderColor: "border-amber-200"
+    color: "from-[#E22213] to-orange-500",
+    bgColor: "from-[#E22213]/5 to-orange-500/5",
+    borderColor: "border-[#E22213]/20"
   },
   { 
     title: "Collaboration", 
     percent: 87, 
     icon: key.sevenSeven,
     description: "Work effectively in team environments",
-    color: "from-rose-500 to-pink-400",
-    bgColor: "from-rose-50 to-pink-50",
-    borderColor: "border-rose-200"
+    color: "from-[#0b234a] via-orange-500 to-[#E22213]",
+    bgColor: "from-[#0b234a]/5 via-orange-500/5 to-[#E22213]/5",
+    borderColor: "border-[#0b234a]/20"
   },
 ];
 
@@ -162,23 +162,23 @@ export default function WebDevKey() {
   const currentSkills = skills.slice(currentIndex, currentIndex + getVisibleCount());
 
   return (
-    <div className="relative px-4 py-4 max-w-7xl mx-auto bg-gradient-to-br from-slate-50 to-blue-50/30 rounded-3xl my-8">
+    <div className="relative px-4 py-4 max-w-7xl mx-auto bg-gradient-to-br from-[#0b234a]/5 to-[#E22213]/5 rounded-3xl my-8">
       {/* Background Decorative Elements */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-br from-orange-200/20 to-yellow-200/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-blue-200/20 to-cyan-200/20 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
+      <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-br from-[#0b234a]/10 to-orange-500/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-orange-500/10 to-[#E22213]/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
 
       <div className="relative z-10">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-200 shadow-sm mb-6">
+          <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-orange-500/20 shadow-sm mb-6">
             <Sparkles className="w-4 h-4 text-orange-500" />
             <span className="text-sm font-medium text-orange-600">Skill Development Roadmap</span>
           </div>
           
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4">
-            Develop Key <span className="text-transparent bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text">Skills</span>
+            Develop Key <span className="bg-gradient-to-r from-[#0b234a] to-[#E22213] bg-clip-text text-transparent">Skills</span>
             <br />
-            Through <span className="text-transparent bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text">Project-Based</span> Learning
+            Through <span className="bg-gradient-to-r from-orange-500 to-[#E22213] bg-clip-text text-transparent">Project-Based</span> Learning
           </h1>
 
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -192,17 +192,17 @@ export default function WebDevKey() {
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-100">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
-                <Target className="w-6 h-6 text-blue-600" />
+                <Target className="w-6 h-6 text-[#0b234a]" />
                 <h3 className="text-lg font-semibold text-gray-900">Overall Skill Progress</h3>
               </div>
               <div className="flex items-center gap-2">
-                <TrendingUp className="w-5 h-5 text-green-500" />
-                <span className="text-sm font-medium text-green-600">+87% Average</span>
+                <TrendingUp className="w-5 h-5 text-[#E22213]" />
+                <span className="text-sm font-medium text-[#E22213]">+87% Average</span>
               </div>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-3">
               <div 
-                className="bg-gradient-to-r from-green-400 to-blue-500 h-3 rounded-full transition-all duration-1000 ease-out"
+                className="bg-gradient-to-r from-[#0b234a] to-[#E22213] h-3 rounded-full transition-all duration-1000 ease-out"
                 style={{ width: '87%' }}
               ></div>
             </div>
@@ -217,12 +217,12 @@ export default function WebDevKey() {
               onClick={handlePrev}
               className="p-3 rounded-full bg-white shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 hover:scale-110 hover:bg-gray-50 group"
             >
-              <ChevronLeft className="w-6 h-6 text-gray-700 group-hover:text-blue-600" />
+              <ChevronLeft className="w-6 h-6 text-gray-700 group-hover:text-[#0b234a]" />
             </button>
             
             <button
               onClick={toggleAutoplay}
-              className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#0b234a] to-[#E22213] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
               {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
               <span className="font-semibold">{isPlaying ? 'Pause' : 'Play'}</span>
@@ -232,7 +232,7 @@ export default function WebDevKey() {
               onClick={handleNext}
               className="p-3 rounded-full bg-white shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 hover:scale-110 hover:bg-gray-50 group"
             >
-              <ChevronRight className="w-6 h-6 text-gray-700 group-hover:text-blue-600" />
+              <ChevronRight className="w-6 h-6 text-gray-700 group-hover:text-[#0b234a]" />
             </button>
           </div>
 
@@ -264,8 +264,12 @@ export default function WebDevKey() {
                       fill="none"
                       strokeDasharray={251.2}
                       strokeDashoffset={251.2 * (1 - (animatedPercent[skill.title] || 0) / 100)}
-                      className={`text-${skill.color.split('-')[1]}-500 transition-all duration-1000 ease-out`}
+                      className="text-current transition-all duration-1000 ease-out"
                       strokeLinecap="round"
+                      style={{ 
+                        color: skill.color.includes('#0b234a') ? '#0b234a' : 
+                               skill.color.includes('orange') ? '#f97316' : '#E22213'
+                      }}
                     />
                   </svg>
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -294,7 +298,7 @@ export default function WebDevKey() {
                   <p className="text-gray-600 text-sm leading-relaxed mb-4">
                     {skill.description}
                   </p>
-                  <div className="flex justify-center items-center gap-2 text-sm font-semibold text-green-600">
+                  <div className="flex justify-center items-center gap-2 text-sm font-semibold text-[#E22213]">
                     <TrendingUp className="w-4 h-4" />
                     <span>+{skill.percent}% Mastery</span>
                   </div>
@@ -314,7 +318,7 @@ export default function WebDevKey() {
                 onClick={() => goToSlide(index * getVisibleCount())}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   Math.floor(currentIndex / getVisibleCount()) === index
-                    ? 'bg-gradient-to-r from-orange-500 to-amber-500 w-8' 
+                    ? 'bg-gradient-to-r from-[#0b234a] to-[#E22213] w-8' 
                     : 'bg-gray-300 hover:bg-gray-400'
                 }`}
               />
@@ -324,7 +328,7 @@ export default function WebDevKey() {
 
         {/* CTA Section */}
         <div className="text-center mt-12">
-          <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-700 hover:to-cyan-700">
+          <button className="px-8 py-4 bg-gradient-to-r from-[#0b234a] to-[#E22213] text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:from-[#0b234a]/90 hover:to-[#E22213]/90">
             Start Your Learning Journey
           </button>
           <p className="text-gray-600 mt-4 text-sm">

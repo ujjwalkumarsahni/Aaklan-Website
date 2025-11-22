@@ -4,13 +4,16 @@ import { Link, useLocation } from "react-router-dom";
 import { assets } from "../assets/assets.js";
 import Login from "../pages/Login.jsx";
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import { useRef } from "react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
-  const [lastScroll, setLastScroll] = useState(0);
   const location = useLocation();
+
+  const lastScroll = useRef(0);
+
 
   const menuItems = [
     { name: "Home", path: "/" },
@@ -27,31 +30,33 @@ export default function Header() {
     const handleScroll = () => {
       const currentScroll = window.scrollY;
 
-      if (currentScroll > lastScroll && currentScroll > 10) {
-        setIsHidden(true);
+      if (currentScroll > lastScroll.current) {
+        setIsHidden(true);  // scrolling down → hide
       } else {
-        setIsHidden(false);
+        setIsHidden(false); // scrolling up → show
       }
 
-      setLastScroll(currentScroll);
+      lastScroll.current = currentScroll;
     };
 
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScroll]);
+  }, []);
+
 
   const isActivePath = (path) => {
     return location.pathname === path;
   };
 
   return (
-    <header className="w-full sticky top-0 z-50">
+    <header className="w-full sticky top-0 z-50 transition-all duration-500">
       {/* Top Bar */}
       <div
-        className={`bg-[#0b234a] text-white text-sm transition-all duration-700 ease-in-out overflow-hidden ${
-          isHidden ? "opacity-0 h-0" : "opacity-100 h-[60px]"
-        }`}
+        className={`bg-[#0b234a] text-white text-sm transition-all duration-500 overflow-hidden ${isHidden ? "opacity-0 h-0" : "opacity-100 h-[60px]"
+          }`}
       >
+
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-6 py-2 px-6 text-white">
           {/* Address */}
           <div className="flex items-center gap-3">
@@ -121,18 +126,16 @@ export default function Header() {
               <li key={item.name} className="relative group">
                 <Link
                   to={item.path}
-                  className={`transition-colors duration-300 ${
-                    isActivePath(item.path)
+                  className={`transition-colors duration-300 ${isActivePath(item.path)
                       ? "text-yellow-500 font-semibold"
                       : "text-gray-700 hover:text-yellow-500"
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </Link>
                 <span
-                  className={`absolute left-0 -bottom-1 h-[3px] bg-yellow-400 transition-all duration-300 ${
-                    isActivePath(item.path) ? "w-full" : "w-0 group-hover:w-full"
-                  }`}
+                  className={`absolute left-0 -bottom-1 h-[3px] bg-yellow-400 transition-all duration-300 ${isActivePath(item.path) ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
                 ></span>
               </li>
             ))}
@@ -156,17 +159,16 @@ export default function Header() {
                   <Link
                     to={item.path}
                     onClick={() => setMobileOpen(false)}
-                    className={`block px-4 py-3 rounded-lg transition-all duration-200 ${
-                      isActivePath(item.path)
+                    className={`block px-4 py-3 rounded-lg transition-all duration-200 ${isActivePath(item.path)
                         ? "bg-yellow-50 text-yellow-600 font-semibold border-l-4 border-yellow-500"
                         : "text-gray-700 hover:bg-gray-50 hover:text-yellow-500"
-                    }`}
+                      }`}
                   >
                     {item.name}
                   </Link>
                 </li>
               ))}
-              
+
               {/* Mobile Auth Buttons */}
               <div className="flex flex-col gap-3 mt-6 px-4 pt-4 border-t">
                 <button

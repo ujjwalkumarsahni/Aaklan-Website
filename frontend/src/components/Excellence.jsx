@@ -1,13 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
 import { card } from "../assets/assets";
 
-const FullServices = () => {
+const Excellence = () => {
   const items = [
     {
       title: "21st Century Skill-labs",
       desc: "Choose from Communication, STEM and Financial Literacy lab",
       img: card.one,
-      color: "from-purple-500 to-pink-500",
+      color: "from-[#0b234a] to-[#E22213]",
       icon: "💡",
       features: ["Communication Lab", "STEM Lab", "Financial Literacy"]
     },
@@ -15,7 +15,7 @@ const FullServices = () => {
       title: "Interactive Content",
       desc: "Audio visual content. Think > Apply > Create Pedagogy",
       img: card.two,
-      color: "from-blue-500 to-cyan-500",
+      color: "from-[#0b234a] to-orange-500",
       icon: "🎬",
       features: ["Audio-Visual", "Think-Apply-Create", "Gamified Learning"]
     },
@@ -23,7 +23,7 @@ const FullServices = () => {
       title: "Top-rated Teachers",
       desc: "Curriculum delivered by AAKLAN Expert Faculty",
       img: card.three,
-      color: "from-green-500 to-emerald-500",
+      color: "from-orange-500 to-[#E22213]",
       icon: "👨‍🏫",
       features: ["AAKLAN Experts", "Certified Faculty", "Industry Professionals"]
     },
@@ -31,17 +31,17 @@ const FullServices = () => {
       title: "Impact & Certifications",
       desc: "Full responsibility to create impact and show results",
       img: card.four,
-      color: "from-orange-500 to-red-500",
+      color: "from-[#E22213] to-orange-500",
       icon: "📜",
       features: ["Verified Impact", "Certifications", "Progress Tracking"]
     },
     {
-      title: "Access to Tech platform",
-      desc: "Track and audit progress of the lessons seamlessly",
+      title: "AI Based LMS",
+      desc: "Next-gen Learning Management System for modern education",
       img: card.five,
-      color: "from-indigo-500 to-purple-500",
+      color: "from-[#0b234a] to-orange-500",
       icon: "🚀",
-      features: ["Real-time Tracking", "Progress Analytics", "Seamless Audit"]
+      features: ["AI-Powered", "User-Friendly", "Comprehensive Analytics"]
     },
   ];
 
@@ -89,8 +89,8 @@ const FullServices = () => {
     >
       {/* Geometric Background Pattern */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-br from-blue-50 to-purple-50 transform -translate-x-1/2 -translate-y-1/2 rotate-45"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-green-50 to-cyan-50 transform translate-x-1/2 translate-y-1/2 rotate-12"></div>
+        <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-br from-[#0b234a]/10 to-[#E22213]/10 transform -translate-x-1/2 -translate-y-1/2 rotate-45"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-[#0b234a]/10 to-orange-500/10 transform translate-x-1/2 translate-y-1/2 rotate-12"></div>
         
         {/* Grid Dots */}
         <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle,#000_1px,transparent_1px)] bg-[length:40px_40px]"></div>
@@ -104,7 +104,7 @@ const FullServices = () => {
           <div className="inline-flex items-center gap-3 px-6 py-3 bg-white rounded-2xl shadow-lg border border-gray-100 mb-8">
             <div className="flex gap-1">
               {[1, 2, 3].map((dot) => (
-                <div key={dot} className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                <div key={dot} className="w-2 h-2 bg-[#0b234a] rounded-full"></div>
               ))}
             </div>
             <span className="text-gray-700 font-semibold text-sm uppercase tracking-wide">
@@ -113,7 +113,7 @@ const FullServices = () => {
           </div>
           
           <h2 className="text-2xl md:text-2xl lg:text-4xl font-bold text-gray-900 mb-6">
-            <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#0b234a] to-[#E22213] bg-clip-text text-transparent">
               Excellence
             </span>
             <span className="block text-2xl md:text-3xl text-gray-500 font-light mt-2">
@@ -139,7 +139,7 @@ const FullServices = () => {
                   key={index}
                   className={`group relative p-6 rounded-2xl transition-all duration-500 cursor-pointer border-2 ${
                     activeIndex === index
-                      ? 'bg-white border-blue-500 shadow-2xl scale-[1.02]'
+                      ? 'bg-white border-[#0b234a] shadow-2xl scale-[1.02]'
                       : 'bg-gray-50/80 border-transparent hover:bg-white hover:shadow-lg'
                   }`}
                   onMouseEnter={() => setActiveIndex(index)}
@@ -273,7 +273,7 @@ const FullServices = () => {
             { value: "98%", label: "Satisfaction" }
           ].map((stat, index) => (
             <div key={index} className="text-center group">
-              <div className="text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+              <div className="text-2xl font-bold bg-gradient-to-r from-[#0b234a] to-[#E22213] bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
                 {stat.value}
               </div>
               <div className="text-gray-500 text-sm mt-2">{stat.label}</div>
@@ -285,7 +285,7 @@ const FullServices = () => {
         <div className={`text-center mt-16 transition-all duration-700 delay-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-5 text-white relative overflow-hidden">
+          <div className="bg-gradient-to-r from-[#0b234a] to-[#E22213] rounded-3xl p-5 text-white relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full -translate-y-16 translate-x-16"></div>
@@ -300,7 +300,7 @@ const FullServices = () => {
                 Join the revolution in learning and teaching excellence.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-4 py-2 bg-white text-gray-900 font-semibold rounded-xl hover:bg-gray-100 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center">
+                <button className="px-4 py-2 bg-white text-[#0b234a] font-semibold rounded-xl hover:bg-gray-100 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center">
                   <span>Start Free Trial</span>
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -318,4 +318,4 @@ const FullServices = () => {
   );
 };
 
-export default FullServices;
+export default Excellence;
