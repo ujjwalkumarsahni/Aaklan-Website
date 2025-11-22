@@ -9,10 +9,8 @@ import { useRef } from "react";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
   const location = useLocation();
 
-  const lastScroll = useRef(0);
 
 
   const menuItems = [
@@ -26,24 +24,6 @@ export default function Header() {
     { name: "Pre Primary School", path: "/pre-primary-school" }
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScroll = window.scrollY;
-
-      if (currentScroll > lastScroll.current) {
-        setIsHidden(true);  // scrolling down → hide
-      } else {
-        setIsHidden(false); // scrolling up → show
-      }
-
-      lastScroll.current = currentScroll;
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
 
   const isActivePath = (path) => {
     return location.pathname === path;
@@ -53,8 +33,7 @@ export default function Header() {
     <header className="w-full sticky top-0 z-50 transition-all duration-500">
       {/* Top Bar */}
       <div
-        className={`bg-[#0b234a] text-white text-sm transition-all duration-500 overflow-hidden ${isHidden ? "opacity-0 h-0" : "opacity-100 h-[60px]"
-          }`}
+        className={`bg-[#0b234a] text-white text-sm transition-all duration-500 hidden sm:block`}
       >
 
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-6 py-2 px-6 text-white">

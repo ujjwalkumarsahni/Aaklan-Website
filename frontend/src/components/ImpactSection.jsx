@@ -89,7 +89,7 @@ export default function ImpactSection() {
 
       {/* CTA Section */}
       <div className="text-center mt-12">
-        <button className="bg-gradient-to-r from-[#0b234a] to-[#E22213] hover:from-[#0b234a]/90 hover:to-[#E22213]/90 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+        <button className="bg-gradient-to-r from-[#0b234a] to-[#E22213] hover:from-[#0b234a]/90 hover:to-[#E22213]/90 text-white font-semibold py-2 px-4 sm:py-3 sm:px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
           See VR in Action
         </button>
         <p className="text-gray-500 text-sm mt-4">

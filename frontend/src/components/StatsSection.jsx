@@ -42,7 +42,7 @@ const StatsSection = () => {
 
     const targets = {
       schools: 95,
-      students: 100000,
+      students: 10000,
       retention: 98,
       trainers: 180
     };
@@ -106,17 +106,17 @@ const StatsSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2">
           {/* LEFT COLUMN - Stats */}
-          <div className="p-8 lg:p-12 bg-linear-to-br from-blue-50 to-indigo-50">
+          <div className="p-4 sm:p-8 lg:p-12 bg-linear-to-br from-blue-50 to-indigo-50">
             <div className="mb-10">
               <h2 className="text-2xl lg:text-3xl font-bold text-[#0b234a] mb-4">
                 Transforming Education Through Technology
               </h2>
-              <p className="text-gray-600 text-lg">
+              <p className="text-gray-600 text-sm sm:text-lg">
                 Our impact in numbers - empowering schools, students and educators across the nation
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-3 sm:gap-6">
               {/* Item 1 - Associated Schools */}
               <div className={`group p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-white/80 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}>
@@ -124,13 +124,13 @@ const StatsSection = () => {
                   <div className="relative">
                     <img
                       src={statsSection.school1}
-                      className="w-14 h-14 transition-transform duration-300 group-hover:scale-110"
+                      className="hidden sm:block w-14 h-14 transition-transform duration-300 group-hover:scale-110"
                       alt="Schools"
                     />
                     <div className="absolute -inset-2 bg-orange-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                   </div>
                   <div>
-                    <p className="text-3xl font-bold text-[#0B234A] mb-1">
+                    <p className="text-2xl sm:text-3xl font-bold text-[#0B234A] mb-1">
                       {counters.schools}+
                     </p>
                     <p className="text-gray-600 text-sm font-medium">Associated Schools</p>
@@ -145,13 +145,13 @@ const StatsSection = () => {
                   <div className="relative">
                     <img
                       src={statsSection.student}
-                      className="w-14 h-14 transition-transform duration-300 group-hover:scale-110"
+                      className="hidden sm:block w-14 h-14 transition-transform duration-300 group-hover:scale-110"
                       alt="Students"
                     />
                     <div className="absolute -inset-2 bg-blue-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                   </div>
                   <div>
-                    <p className="text-3xl font-bold text-[#0b234a] mb-1">
+                    <p className="text-2xl sm:text-3xl font-bold text-[#0b234a] mb-1">
                       {formatNumber(counters.students)}+
                     </p>
                     <p className="text-gray-600 text-sm font-medium">Students Trained</p>
@@ -166,13 +166,13 @@ const StatsSection = () => {
                   <div className="relative">
                     <img
                       src={statsSection.school2}
-                      className="w-14 h-14 transition-transform duration-300 group-hover:scale-110"
+                      className="hidden sm:block w-14 h-14 transition-transform duration-300 group-hover:scale-110"
                       alt="Retention"
                     />
                     <div className="absolute -inset-2 bg-green-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                   </div>
                   <div>
-                    <p className="text-3xl font-bold text-[#0b234a] mb-1">
+                    <p className="text-2xl sm:text-3xl font-bold text-[#0b234a] mb-1">
                       {counters.retention}%
                     </p>
                     <p className="text-gray-600 text-sm font-medium">School Retention</p>
@@ -187,13 +187,13 @@ const StatsSection = () => {
                   <div className="relative">
                     <img
                       src={statsSection.teacher}
-                      className="w-14 h-14 transition-transform duration-300 group-hover:scale-110"
+                      className="hidden sm:block w-14 h-14 transition-transform duration-300 group-hover:scale-110"
                       alt="Trainers"
                     />
                     <div className="absolute -inset-2 bg-purple-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                   </div>
                   <div>
-                    <p className="text-3xl font-bold text-[#0b234a] mb-1">
+                    <p className="text-2xl sm:text-3xl font-bold text-[#0b234a] mb-1">
                       {counters.trainers}+
                     </p>
                     <p className="text-gray-600 text-sm font-medium">Trained Trainers</p>
@@ -238,7 +238,7 @@ const StatsSection = () => {
                 </p>
 
                 <div className="relative group">
-                  <div className="flex items-center justify-center space-x-12">
+                  <div className="flex items-center justify-center space-x-4 sm:space-x-12">
                     <div className="text-center">
                       <img
                         src={statsSection.iStart}

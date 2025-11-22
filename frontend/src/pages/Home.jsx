@@ -8,7 +8,6 @@ import AiRoboticsSection from '../components/AiRoboticsSection.jsx'
 // import KitsSection from '../components/KitsSection.jsx'
 // import CodingAi from '../components/CodingAi.jsx'
 import StructuredCurriculum from '../components/StructuredCurriculum.jsx'
-// import AAKLANSchool from '../components/AAKLANSchool.jsx'
 import ImpactSection from '../components/ImpactSection.jsx'
 import VRFeatures from '../components/VRFeatures.jsx'
 import VrFeatureSection from '../components/VrFeatureSection.jsx'
@@ -31,18 +30,15 @@ const Home = () => {
         <DedicatedStaffing />
         <AiRoboticsSection />
         <RoboticsKit />
-        {/* <CodingAi /> */}
         <StructuredCurriculum />
-        {/* <AAKLANSchool /> */}
         <ImpactSection />
         <VRFeatures />
         <VrFeatureSection />
-        {/* <CodingQuiz /> */}
         <WebDevKey />
-        <CertificateSection />
-        <FutureSkills />
-        <BenefitsofJoining />
-        <OurBelivers />
+        {/* <CertificateSection /> */}
+        {/* <FutureSkills /> */}
+        {/* <BenefitsofJoining /> */}
+        {/* <OurBelivers /> */}
     </div>
   )
 }

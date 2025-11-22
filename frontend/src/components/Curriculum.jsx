@@ -141,7 +141,7 @@ const Curriculum = () => {
           </div>
 
           {/* Right Content - Featured Card */}
-          <div className="lg:w-3/5">
+          <div className="hidden sm:block lg:w-3/5">
             <div className="bg-white rounded-3xl border-2 border-gray-100 p-6 shadow-xl hover:shadow-2xl transition-all duration-500 group">
               <div className="flex items-start gap-6">
                 <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${skills[activeCard].color} p-2 shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>

@@ -4,7 +4,7 @@ import { vrFeatures } from '../assets/assets';
 
 const VrFeatureSection = () => {
     return (
-        <section className="w-full py-2 px-4 bg-gradient-to-br from-white to-gray-50">
+        <section className="w-full py-2 px-4 bg-gradient-to-br from-white to-gray-50 overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 overflow-hidden opacity-5">
                 <div className="absolute top-20 left-10 w-32 h-32 bg-[#0b234a] rounded-full"></div>
