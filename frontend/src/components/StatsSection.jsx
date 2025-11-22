@@ -230,47 +230,47 @@ const StatsSection = () => {
             <div className={`text-center transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}>
               <div className="inline-block p-8 bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/60 mb-8">
-  <p className="relative text-gray-600 text-lg font-semibold mb-8 text-center">
-    Backed by
-    <span
-      className="absolute left-1/2 -bottom-2 h-1 w-24 bg-linear-to-r from-[#0b234a] to-[#E22213] rounded-full transform -translate-x-1/2"
-    ></span>
-  </p>
-  
-  <div className="relative group">
-    <div className="flex items-center justify-center space-x-12">
-      <div className="text-center">
-        <img
-          src={statsSection.iStart}
-          alt="iStart"
-          className="w-40 lg:w-48 mx-auto transition-all duration-300 filter group-hover:brightness-110 group-hover:scale-105"
-        />
-        <p className="text-gray-500 text-sm mt-3">Innovation Partner</p>
-      </div>
-      
-      {/* Vertical Divider with Icon */}
-      <div className="flex flex-col items-center">
-        <div className="h-12 w-0.5 bg-linear-to-b from-[#0b234a] to-[#E22213] rounded-full mb-2"></div>
-        <div className="w-8 h-8 bg-linear-to-r from-[#0b234a] to-[#E22213] rounded-full flex items-center justify-center">
-          <span className="text-white text-sm font-bold">+</span>
-        </div>
-        <div className="h-12 w-0.5 bg-linear-to-b from-[#E22213] to-orange-500 rounded-full mt-2"></div>
-      </div>
-      
-      <div className="text-center">
-        <img
-          src={statsSection.iStart}
-          alt="Technology Partner"
-          className="w-40 lg:w-48 mx-auto transition-all duration-300 filter group-hover:brightness-110 group-hover:scale-105"
-        />
-        <p className="text-gray-500 text-sm mt-3">Technology Partner</p>
-      </div>
-    </div>
-    
-    {/* Hover Effect */}
-    <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl pointer-events-none"></div>
-  </div>
-</div>
+                <p className="relative text-gray-600 text-lg font-semibold mb-8 text-center">
+                  Backed by
+                  <span
+                    className="absolute left-1/2 -bottom-2 h-1 w-24 bg-linear-to-r from-[#0b234a] to-[#E22213] rounded-full transform -translate-x-1/2"
+                  ></span>
+                </p>
+
+                <div className="relative group">
+                  <div className="flex items-center justify-center space-x-12">
+                    <div className="text-center">
+                      <img
+                        src={statsSection.iStart}
+                        alt="iStart"
+                        className="w-40 lg:w-48 mx-auto transition-all duration-300 filter group-hover:brightness-110 group-hover:scale-105"
+                      />
+                      <p className="text-gray-500 text-sm mt-3">Innovation Partner</p>
+                    </div>
+
+                    {/* Vertical Divider with Icon */}
+                    <div className="flex flex-col items-center">
+                      <div className="h-12 w-0.5 bg-linear-to-b from-[#0b234a] to-[#E22213] rounded-full mb-2"></div>
+                      <div className="w-8 h-8 bg-linear-to-r from-[#0b234a] to-[#E22213] rounded-full flex items-center justify-center">
+                        <span className="text-white text-sm font-bold">+</span>
+                      </div>
+                      <div className="h-12 w-0.5 bg-linear-to-b from-[#E22213] to-orange-500 rounded-full mt-2"></div>
+                    </div>
+
+                    <div className="text-center">
+                      <img
+                        src='https://d2lk14jtvqry1q.cloudfront.net/media/small_BITS_Pilani_7a058e9309_098a202d47_d55a9cc055_b70d67d1ea.png'
+                        alt="Technology Partner"
+                        className="w-40 lg:w-48 mx-auto transition-all duration-300 filter group-hover:brightness-110 group-hover:scale-105"
+                      />
+                      <p className="text-gray-500 text-sm mt-3">Technology Partner</p>
+                    </div>
+                  </div>
+
+                  {/* Hover Effect */}
+                  <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl pointer-events-none"></div>
+                </div>
+              </div>
 
               <div className="max-w-md mx-auto">
                 <h3 className="text-2xl font-bold text-[#0b234a] mb-4">

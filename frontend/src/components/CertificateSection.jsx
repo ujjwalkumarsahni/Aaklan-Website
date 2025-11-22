@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function CertificateSection() {
   return (
-    <section className="w-full py-16 px-4 bg-gradient-to-br from-[#0b234a] via-[#0b234a]/90 to-[#E22213] relative overflow-hidden">
+    <section className="w-full py-16 px-4 bg-linear-to-br from-[#0b234a] via-[#0b234a]/90 to-[#E22213] relative overflow-hidden">
       
       {/* Background Elements */}
       <div className="absolute inset-0 bg-black/40"></div>
@@ -21,7 +21,7 @@ export default function CertificateSection() {
           <div className="w-full lg:w-1/2 text-center lg:text-left">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
               Learn to code and 
-              <span className="bg-gradient-to-r from-orange-500 to-[#E22213] bg-clip-text text-transparent"> get certificates</span>
+              <span className="bg-linear-to-r from-orange-500 to-[#E22213] bg-clip-text text-transparent"> get certificates</span>
             </h1>
             
             <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-8 max-w-2xl">
@@ -29,7 +29,7 @@ export default function CertificateSection() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button className="px-8 py-4 bg-gradient-to-r from-orange-500 to-[#E22213] text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 hover:from-orange-400 hover:to-[#E22213]/90">
+              <button className="px-8 py-4 bg-linear-to-r from-orange-500 to-[#E22213] text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 hover:from-orange-400 hover:to-[#E22213]/90">
                 Book a free lesson
               </button>
               
@@ -70,7 +70,7 @@ export default function CertificateSection() {
                   
                   {/* Certificate Header */}
                   <div className="mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-r from-[#0b234a] to-[#E22213] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-linear-to-r from-[#0b234a] to-[#E22213] rounded-full flex items-center justify-center mx-auto mb-4">
                       <span className="text-white text-2xl">🏆</span>
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">Certificate of Achievement</h3>
