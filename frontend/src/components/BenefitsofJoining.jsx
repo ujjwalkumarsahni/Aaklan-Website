@@ -4,6 +4,7 @@ import { vrFeatures } from '../assets/assets.js'
 const BenefitsofJoining = () => {
     return (
         <section class="bg-[#071C44] text-white py-16 px-6">
+            
             <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
                 <div class="flex justify-center">

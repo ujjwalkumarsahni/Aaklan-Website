@@ -5,10 +5,10 @@ import Curriculum from '../components/Curriculum.jsx'
 import FullServices from '../components/FullServices.jsx'
 import DedicatedStaffing from '../components/DedicatedStaffing.jsx'
 import AiRoboticsSection from '../components/AiRoboticsSection.jsx'
-import KitsSection from '../components/KitsSection.jsx'
-import CodingAi from '../components/CodingAi.jsx'
+// import KitsSection from '../components/KitsSection.jsx'
+// import CodingAi from '../components/CodingAi.jsx'
 import StructuredCurriculum from '../components/StructuredCurriculum.jsx'
-import AAKLANSchool from '../components/AAKLANSchool.jsx'
+// import AAKLANSchool from '../components/AAKLANSchool.jsx'
 import ImpactSection from '../components/ImpactSection.jsx'
 import VRFeatures from '../components/VRFeatures.jsx'
 import VrFeatureSection from '../components/VrFeatureSection.jsx'
@@ -17,6 +17,8 @@ import WebDevKey from '../components/WebDevelopKeySkills.jsx'
 import BenefitsofJoining from '../components/BenefitsofJoining.jsx'
 import FutureSkills from '../components/FutureSkills.jsx'
 import OurBelivers from '../components/OurBelivers.jsx'
+import RoboticsKit from '../components/RoboticsKit.jsx'
+import CertificateSection from '../components/CertificateSection.jsx'
 
 const Home = () => {
   return (
@@ -27,17 +29,18 @@ const Home = () => {
         <FullServices />
         <DedicatedStaffing />
         <AiRoboticsSection />
-        <KitsSection />
-        <CodingAi />
+        <RoboticsKit />
+        {/* <CodingAi /> */}
         <StructuredCurriculum />
-        <AAKLANSchool />
+        {/* <AAKLANSchool /> */}
         <ImpactSection />
         <VRFeatures />
         <VrFeatureSection />
-        <CodingQuiz />
+        {/* <CodingQuiz /> */}
         <WebDevKey />
-        <BenefitsofJoining />
+        <CertificateSection />
         <FutureSkills />
+        <BenefitsofJoining />
         <OurBelivers />
     </div>
   )

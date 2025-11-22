@@ -10,9 +10,9 @@ export default function AiRoboticsSection() {
   ];
 
   return (
-    <section className="w-full bg-[#082046] py-16 px-4 text-white overflow-hidden">
+    <section className="relative w-full bg-[#082046] py-16 px-4 text-white overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10">
-
+          
         {/* Left Image */}
         <div className="w-full lg:w-1/2 relative flex justify-center">
           <img
@@ -21,7 +21,6 @@ export default function AiRoboticsSection() {
             className="w-full max-w-lg object-cover lg:scale-[1.15] lg:translate-x-6"
           />
         </div>
-
         {/* Right Content */}
         <div className="w-full lg:w-1/2">
           <h2 className="text-3xl md:text-4xl font-bold leading-snug mb-4">

@@ -195,7 +195,7 @@ export default function Footer() {
         </div>
 
         {/* Newsletter Subscription */}
-        <div className="bg-linear-to-r from-orange-600 to-orange-700 rounded-2xl p-6 mb-8 shadow-xl">
+        {/* <div className="bg-linear-to-r from-orange-600 to-orange-700 rounded-2xl p-6 mb-8 shadow-xl">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-4 md:mb-0">
               <h3 className="text-xl font-bold mb-2">Stay Updated</h3>
@@ -212,7 +212,7 @@ export default function Footer() {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Bottom Bar */}
         <div className="border-t border-white/20 pt-6">
@@ -230,7 +230,7 @@ export default function Footer() {
       </div>
 
       {/* Mobile Bottom Navigation */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-blue-600 border-t border-blue-500">
+      {/* <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-blue-600 border-t border-blue-500">
         <div className="flex justify-around py-3">
           <a href="tel:+919571677609" className="flex flex-col items-center text-white">
             <Phone size={18} />
@@ -245,7 +245,7 @@ export default function Footer() {
             <span className="text-xs mt-1">Location</span>
           </a>
         </div>
-      </div>
+      </div> */}
     </footer>
   );
 }

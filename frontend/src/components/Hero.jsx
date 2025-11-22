@@ -16,13 +16,25 @@ const Hero = () => {
 
             <div className="dot-cluster absolute bottom-[-50px] right-[-50px]"></div>
 
-            {/* Subtle Bottom Gradient */}
-            <div
-                className="absolute bottom-0 left-0 w-full h-[40%] opacity-40 pointer-events-none bg-gradient-to-r from-orange-600 to-white"
-                style={{
-                    clipPath: "polygon(0 20%, 100% 0%, 100% 100%, 0% 100%)",
-                }}
-            ></div>
+            <div className="absolute top-[-68px] right-[-120px] w-[300px] h-[200px] bg-[#FF6900] opacity-70 rounded-full pointer-events-none"></div>
+            <div className="absolute top-[-68px] left-[-120px] w-[300px] h-[200px] bg-[#FF6900] opacity-70 rounded-full pointer-events-none"></div>
+
+            {/* Bottom Gradient */}
+            <div className="absolute bottom-0 w-full pointer-events-none">
+                <svg
+                    viewBox="0 0 1440 320"
+                    className="w-full h-[250px]"
+                    preserveAspectRatio="none"
+                >
+                    <path
+                        fill="#ffb266"
+                        fillOpacity="1"
+                        d="M0,256L30,250.7C60,245,120,235,180,224C240,213,300,203,360,208C420,213,480,235,540,229.3C600,224,660,192,720,160C780,128,840,96,900,85.3C960,75,1020,85,1080,96C1140,107,1200,117,1260,133.3C1320,149,1380,171,1410,181.3L1440,192L1440,320L0,320Z"
+                    ></path>
+                </svg>
+            </div>
+
+
 
             {/* Main Content */}
             <div className="relative px-4 sm:px-8 md:px-16 lg:px-20 py-14 flex flex-col md:flex-row items-center justify-between gap-10">
@@ -40,7 +52,7 @@ const Hero = () => {
                         <span className="text-orange-500 relative inline-block">
                             Viksit Bharat
                             <span
-                                className="absolute left-0 -bottom-1 h-[4px] w-full bg-orange-500 rounded-full"
+                                className="absolute left-0 -bottom-1 h-1 w-full bg-orange-500 rounded-full"
                                 style={{ transform: "rotate(-3deg)", transformOrigin: "left bottom" }}
                             ></span>
                         </span>

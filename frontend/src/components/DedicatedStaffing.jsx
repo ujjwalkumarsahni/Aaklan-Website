@@ -1,287 +1,185 @@
-import { CheckCircle, PlayCircle, Users, Target, BarChart3, ArrowRight } from "lucide-react";
-import { some } from "../assets/assets";
-import { useState, useRef, useEffect } from "react";
+// DedicatedStaffing.jsx
+import React from 'react';
 
-export default function DedicatedStaffing() {
-  const points = [
+const DedicatedStaffing = () => {
+  const steps = [
     {
-      text: "School signs-up with Aaklan",
-      icon: "🏫",
-      description: "Simple onboarding process to get started"
+      id: 1,
+      title: "School signs-up with Aaklan",
+      description: "Begin your journey with a simple registration process",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+        </svg>
+      )
     },
     {
-      text: "Program Manager is assigned",
-      icon: "👨‍💼",
-      description: "Dedicated expert to oversee your program"
+      id: 2,
+      title: "Program Manager is assigned",
+      description: "Get a dedicated expert to oversee your program",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+        </svg>
+      )
     },
     {
-      text: "Teacher is recruited and trained",
-      icon: "👩‍🏫",
-      description: "Carefully selected and trained educators"
+      id: 3,
+      title: "Teacher is recruited and trained",
+      description: "We carefully select and prepare educators for your needs",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+        </svg>
+      )
     },
     {
-      text: "Teacher starts classes over tech platform",
-      icon: "💻",
-      description: "Seamless integration with our technology"
+      id: 4,
+      title: "Teacher starts classes over tech platform",
+      description: "Seamless integration with our advanced technology",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      )
     },
     {
-      text: "Regular audits of classes by Program Manager",
-      icon: "📊",
-      description: "Continuous quality monitoring and improvement"
+      id: 5,
+      title: "Regular audits of classes by Program Manager",
+      description: "Continuous quality assurance for optimal results",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      )
     },
     {
-      text: "School track progress over tech-platform",
-      icon: "📈",
-      description: "Real-time progress tracking and analytics"
-    },
-  ];
-
-  const [activeStep, setActiveStep] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
-
-  // Intersection Observer
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+      id: 6,
+      title: "School tracks progress over tech-platform",
+      description: "Monitor performance and outcomes with real-time data",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+      )
     }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
-  // Auto-advance steps
-  useEffect(() => {
-    if (!isVisible) return;
-
-    const interval = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % points.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [isVisible, points.length]);
-
-  const stats = [
-    { icon: Users, value: "500+", label: "Schools Partnered" },
-    { icon: Target, value: "98%", label: "Success Rate" },
-    { icon: BarChart3, value: "50K+", label: "Students Impacted" },
   ];
 
   return (
-    <section 
-      ref={sectionRef}
-      className="w-full py-6 lg:py-8 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden"
-    >
-      <div className="max-w-7xl mx-auto px-6">
+    <div className="relative min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180">
+        <svg 
+          className="relative block w-full h-20" 
+          data-name="Layer 1" 
+          xmlns="http://www.w3.org/2000/svg" 
+          viewBox="0 0 1200 120" 
+          preserveAspectRatio="none"
+        >
+          <path 
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
+            className="fill-[#082046]"
+          ></path>
+        </svg>
+      </div>
+      <div className="max-w-6xl mx-auto">
         {/* Header Section */}
-        <div className={`text-center mb-5 transition-all duration-700 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
-          <div className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm rounded-2xl border border-blue-200/50 shadow-sm mb-8">
-            <span className="w-3 h-3 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mr-3 animate-pulse"></span>
-            <span className="text-blue-700 font-semibold text-base">Streamlined Process</span>
-          </div>
-          
-          <h2 className="text-3xl md:text-3xl lg:text-3xl font-bold text-gray-900 mb-8">
-            Dedicated{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-indigo-700 bg-clip-text text-transparent">
-              Staffing
+        <div className="text-center mb-16">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Empowering Success with{' '}
+            <span className="bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
+              Dedicated Staffing Solutions
             </span>
-            <br />
-            Solutions
-          </h2>
-          
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
-            Complete responsibility for impeccable class delivery and student success 
-            through our end-to-end staffing ecosystem.
+          </h1>
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            We take full responsibility of impeccable class delivery and student impact.
           </p>
         </div>
 
-        {/* New Structure: Image Top, Process Steps Bottom */}
-        <div className="flex flex-col gap-16">
-          {/* Top Section - Visual with Active Step */}
-          <div className={`grid grid-cols-1 lg:grid-cols-3 gap-4 transition-all duration-700 delay-300 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}>
-            {/* Stats Cards - Left */}
-            <div className="space-y-6">
-              {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-blue-100/50 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 group"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <stat.icon size={28} className="text-white" />
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
-                      <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Main Visual - Center */}
-            <div className="lg:col-span-2 relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white/20 backdrop-blur-sm">
-                <img
-                  src={some.dedicatedStaffing}
-                  alt="Teacher showing code on screen"
-                  className="w-full h-64 lg:h-80 object-cover transition-transform duration-700 hover:scale-110"
-                />
-                
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                
-                {/* Active Step Overlay */}
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-2xl">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl flex items-center justify-center">
-                        <span className="text-2xl">{points[activeStep].icon}</span>
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-lg font-bold text-gray-900">
-                          Step {activeStep + 1}: {points[activeStep].text}
-                        </h3>
-                        <p className="text-gray-600 text-sm mt-1">
-                          {points[activeStep].description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Section - Process Steps in Timeline Layout */}
-          <div className={`transition-all duration-700 delay-500 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}>
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-blue-100/50">
-              <h3 className="text-2xl font-bold text-gray-900 text-center mb-4">
-                Our 6-Step Success Process
-              </h3>
-              
-              {/* Timeline Layout */}
-              <div className="relative">
-                {/* Timeline Line */}
-                <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-200 via-blue-400 to-indigo-200 transform -translate-x-1/2"></div>
-                
-                <div className="space-y-6">
-                  {points.map((point, index) => (
-                    <div
-                      key={index}
-                      className={`relative flex items-start gap-6 p-3 rounded-2xl transition-all duration-500 cursor-pointer group ${
-                        activeStep === index
-                          ? 'bg-blue-50 border-2 border-blue-200 shadow-md'
-                          : 'hover:bg-gray-50'
-                      }`}
-                      onMouseEnter={() => setActiveStep(index)}
-                      onClick={() => setActiveStep(index)}
-                    >
-                      {/* Step Number */}
-                      <div className={`flex-shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-500 ${
-                        activeStep === index
-                          ? 'bg-gradient-to-br from-blue-600 to-indigo-700 scale-110 shadow-lg'
-                          : 'bg-gradient-to-br from-blue-500 to-indigo-600 shadow-md group-hover:scale-105'
-                      }`}>
-                        {activeStep === index ? (
-                          <CheckCircle size={24} className="text-white" />
-                        ) : (
-                          <span className="text-white font-bold text-lg">{index + 1}</span>
-                        )}
-                      </div>
-
-                      {/* Content */}
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-start justify-between mb-2">
-                          <h4 className={`text-lg font-semibold transition-colors duration-300 ${
-                            activeStep === index
-                              ? 'text-blue-700'
-                              : 'text-gray-900 group-hover:text-blue-600'
-                          }`}>
-                            {point.text}
-                          </h4>
-                          <span className="text-2xl ml-4">{point.icon}</span>
+        {/* Process Steps */}
+        <div className="relative">
+          {/* Vertical line for timeline */}
+          <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-blue-400 to-green-400 hidden md:block"></div>
+          
+          <div className="space-y-8 md:space-y-12">
+            {steps.map((step, index) => (
+              <div 
+                key={step.id} 
+                className="flex flex-col md:flex-row items-start md:items-center relative"
+              >
+                {/* Left Side Content (for even steps) */}
+                <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'} mb-4 md:mb-0 order-2 md:order-1`}>
+                  {index % 2 === 0 && (
+                    <div className="bg-white rounded-xl shadow-lg p-4 md:p-6 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200">
+                      <div className={`flex md:flex-row-reverse items-start space-x-4 md:space-x-reverse md:space-x-4`}>
+                        <div className="shrink-0">
+                          <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-blue-500 to-green-400 rounded-full flex items-center justify-center text-white">
+                            {step.icon}
+                          </div>
                         </div>
-                        <p className={`text-gray-600 leading-relaxed transition-all duration-300 ${
-                          activeStep === index ? 'opacity-100 max-h-20' : 'opacity-0 max-h-0'
-                        } overflow-hidden`}>
-                          {point.description}
-                        </p>
+                        <div className="flex-1">
+                          <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">
+                            {step.title}
+                          </h3>
+                          <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                            {step.description}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  ))}
+                  )}
                 </div>
-              </div>
 
-              {/* Progress Navigation */}
-              <div className="flex items-center justify-between mt-8 pt-3 border-t border-gray-200">
-                <div className="flex items-center gap-4">
-                  <div className="flex space-x-2">
-                    {points.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setActiveStep(index)}
-                        className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                          activeStep === index 
-                            ? 'bg-blue-600 scale-125'
-                            : 'bg-gray-300 hover:bg-gray-400'
-                        }`}
-                      />
-                    ))}
+                {/* Center Timeline */}
+                <div className="flex items-center justify-center md:absolute md:left-1/2 md:transform md:-translate-x-1/2 order-1 md:order-2 z-10 mb-4 md:mb-0">
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full shadow-lg flex items-center justify-center border-4 border-blue-500 hover:scale-110 transition-transform duration-300">
+                    <span className="text-lg md:text-xl font-bold text-blue-600">{step.id}</span>
                   </div>
-                  <span className="text-sm text-gray-500 font-medium">
-                    Step {activeStep + 1} of {points.length}
-                  </span>
                 </div>
-                
-                <button className="px-3 py-2 bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2">
-                  <span>Get Started</span>
-                  <ArrowRight size={16} />
-                </button>
+
+                {/* Right Side Content (for odd steps) */}
+                <div className={`md:w-1/2 ${index % 2 !== 0 ? 'md:pl-12' : 'md:pr-12'} order-3`}>
+                  {index % 2 !== 0 && (
+                    <div className="bg-white rounded-xl shadow-lg p-4 md:p-6 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-green-200">
+                      <div className="flex items-start space-x-4">
+                        <div className="shrink-0">
+                          <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-blue-500 to-green-400 rounded-full flex items-center justify-center text-white">
+                            {step.icon}
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">
+                            {step.title}
+                          </h3>
+                          <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                            {step.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Mobile connector */}
+                {index < steps.length - 1 && (
+                  <div className="absolute top-12 md:top-16 left-6 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-8 md:h-12 bg-gradient-to-b from-blue-400 to-green-400 md:hidden"></div>
+                )}
               </div>
-            </div>
+            ))}
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className={`text-center mt-5 transition-all duration-700 delay-700 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-8 text-white shadow-2xl max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">Ready to Transform Your School?</h3>
-            <p className="text-blue-100 mb-3 max-w-2xl mx-auto">
-              Join hundreds of schools already benefiting from our comprehensive staffing solutions.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="px-3 py-2 bg-white text-blue-700 font-semibold rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2">
-                <span>Start Your Journey</span>
-                <ArrowRight size={16} />
-              </button>
-              <button className="px-3 py-2 bg-transparent text-white font-semibold rounded-2xl border-2 border-white/30 hover:border-white/50 hover:bg-white/10 transition-all duration-300">
-                Schedule a Demo
-              </button>
-            </div>
-          </div>
+        {/* CTA Section */}
+        <div className="text-center mt-16">
+          <button className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-lg">
+            Get Started Today
+          </button>
+          <p className="text-gray-500 mt-4 text-sm">
+            Join hundreds of schools already transforming their educational delivery
+          </p>
         </div>
       </div>
-    </section>
+    </div>
   );
-}
+};
+
+export default DedicatedStaffing;
