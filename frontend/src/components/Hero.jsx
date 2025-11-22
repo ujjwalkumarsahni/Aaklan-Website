@@ -60,7 +60,7 @@ const Hero = () => {
 
                     {/* Buttons */}
                     <div className="flex gap-4 justify-center md:justify-start mt-6">
-                        <motion.button whileHover={{ scale: 1.05 }} className="px-8 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full shadow-lg font-semibold">Get Started</motion.button>
+                        <motion.button whileHover={{ scale: 1.05 }} className="px-8 py-3 bg-linear-to-r from-orange-500 to-red-500 text-white rounded-full shadow-lg font-semibold">Get Started</motion.button>
                         <motion.button whileHover={{ scale: 1.05 }} className="px-8 py-3 border border-orange-500 text-orange-500 rounded-full font-semibold hover:bg-orange-500 hover:text-white transition">Read More</motion.button>
                     </div>
                 </motion.div>
